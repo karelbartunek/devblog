@@ -9,3 +9,8 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /.docker/.env.nginx.local
+/.docker/nginx/.env.nginx.local
+/.idea/blog.iml
+/.idea/modules.xml
+/.idea/php.xml
+/.idea/vcs.xml
