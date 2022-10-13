@@ -21,14 +21,14 @@ services:
             args:
                 TIMEZONE: ${TIMEZONE}
         volumes:
-            - symfony_dockerized_app_sync:/var/www/symfony/
+            - ../:/var/www/symfony/
         networks:
             - symfony
     nginx:
         build:
             context: ./nginx
         volumes:
-            - symfony_dockerized_app_sync:/var/www/symfony/
+            - ../:/var/www/symfony/
         ports:
             - 80:80
         networks:
@@ -36,9 +36,19 @@ services:
         env_file:
             - .env.nginx.local
 
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8088:80"
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=db
+        restart: always
+        depends_on:
+            - "db"
+        networks:
+            - symfony
 volumes:
-    symfony_dockerized_app_sync:
-        external: true
     db_app:
 
 networks:
