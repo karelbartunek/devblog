@@ -1,3 +1,7 @@
-controllers:
+controllers_public:
     resource: ../../src/Blog/Application/Public/Controller/
+    type: annotation
+
+controllers_admin:
+    resource: ../../src/Blog/Application/Admin/Controller/
     type: annotation

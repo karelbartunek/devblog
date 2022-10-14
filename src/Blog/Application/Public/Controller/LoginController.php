@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Application\Admin\Controller;
+namespace App\Blog\Application\Public\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class LoginController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('login/index.html.twig', [
+        return $this->render('blog/login.html.twig', [
             'controller_name' => 'LoginController',
             'last_username' => $lastUsername,
             'error' => $error,

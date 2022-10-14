@@ -11,6 +11,8 @@ class BlogController extends AbstractController
     #[Route(path: '/blog', name: 'blog', methods: ['GET'])]
     public function list(): Response
     {
+        return $this->render('blog/blog.html.twig', [
 
+        ]);
     }
 }

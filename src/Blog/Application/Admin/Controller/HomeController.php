@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blog\Application\Public\Controller;
+namespace App\Blog\Application\Admin\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -8,10 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route(path: '/', name: 'home', methods: ['GET'])]
+    #[Route(path: '/admin', name: 'admin_home', methods: ['GET'])]
     public function home(): Response
     {
-        return $this->render('blog/home.html.twig', [
+        return $this->render('admin/home.html.twig', [
 
         ]);
     }
