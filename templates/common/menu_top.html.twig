@@ -1,0 +1,10 @@
+
+<a href="{{ path('blog') }}">Blog</a>
+
+{% if is_granted("ROLE_ADMIN") %}
+  | <a href="{{ path('admin_home') }}">Admin</a> |
+  <a href="{{ path('admin_new') }}">Add Post</a> |
+  <a href="{{ path('app_logout') }}">Logout</a>
+{% else %}
+  <a href="{{ path('app_login') }}">Login</a>
+{% endif %}

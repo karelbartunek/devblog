@@ -1,9 +1,10 @@
 {% extends 'blog/base.html.twig' %}
 
 {% block content %}
-  {{ include('blog/menu/top.html.twig') }}
 
   <h1>Blog</h1>
   <h2>Příspěvky</h2>
+
+  {% include 'common/blog_posts.html.twig' %}
 
 {% endblock %}

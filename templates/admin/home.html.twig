@@ -1,6 +1,10 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block content %}
-  <a href="{{ path('blog') }}">Blog</a>
-  <a href="{{ path('app_logout') }}">Logout</a>
+
+  <h1>Admin</h1>
+  <h2>Příspěvky</h2>
+
+  {% include 'common/blog_posts.html.twig' %}
+
 {% endblock %}

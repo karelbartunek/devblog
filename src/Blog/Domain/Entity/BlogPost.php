@@ -22,6 +22,11 @@ class BlogPost
     #[ORM\Column(type: 'datetime_immutable')]
     private $blogPostCreatedAt;
 
+    public function __construct()
+    {
+        $this->blogPostCreatedAt = new \DateTimeImmutable();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
