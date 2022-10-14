@@ -1,0 +1,10 @@
+{% extends 'blog/base.html.twig' %}
+
+{% block content %}
+
+  <h1>Blog</h1>
+  <h2>Příspěvek</h2>
+
+  {% include 'common/blog_post.html.twig' with {'truncateValue': '-1'}  %}
+
+{% endblock %}

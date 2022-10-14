@@ -1,0 +1,7 @@
+
+<h3><a href="{{ path('blog_detail', { 'blogPostId': blog_post.id }) }}">{{ blog_post.blogPostTitle|e }}</a></h3>
+<i>{{ blog_post.blogPostCreatedAt|date("d.m.Y") }}</i>
+<p>{{ blog_post.blogPostContent|u.truncate(truncateValue, '...', false)|e }}</p>
+{% if is_granted("ROLE_ADMIN") %}
+  <a href="{{ path('admin_remove', { 'blogPostId': blog_post.id } ) }}">Smazat</a> | <a href="{{ path('admin_edit', { 'blogPostId': blog_post.id }) }}">Upravit</a>
+{% endif %}

@@ -4,12 +4,7 @@
 {% else %}
   <div>
     {% for blog_post in blog_posts %}
-      <h3>{{ blog_post.blogPostTitle|e }}</h3>
-      <i>{{ blog_post.blogPostCreatedAt|date("d.m.Y") }}</i>
-      <p>{{ blog_post.blogPostContent|u.truncate(150, '...', false)|e }}</p>
-      {% if is_granted("ROLE_ADMIN") %}
-        <a href="{{ path('admin_remove', { 'blogPostId': blog_post.id } ) }}">Smazat</a> | <a href="{{ path('admin_edit', { 'blogPostId': blog_post.id }) }}">Upravit</a>
-      {% endif %}
+      {% include 'common/blog_post.html.twig' with {'truncateValue': '150'} %}
       <hr>
     {% endfor %}
   </div>
